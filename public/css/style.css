@@ -1,0 +1,37 @@
+html{
+  min-height: 100vh;
+}
+
+body{
+  background-color: D2D2E1;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.navbarcolor{
+    background-color: #30438E;
+}
+
+.bg-utama{
+  background-color: #30438E;
+}
+
+.tulisanBiru{
+  color: #30438E;
+}
+
+/* login card background color */
+.logincolor{
+  background-color:	#F1F5F9;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* 
+
+*/
+
