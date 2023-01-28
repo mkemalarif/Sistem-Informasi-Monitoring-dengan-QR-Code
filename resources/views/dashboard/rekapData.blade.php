@@ -1,6 +1,6 @@
-@extends("layout.main")
+@extends("dashboard.layout.main")
 
-@section("container")
+@section("isiHalaman")
 
 <div class="container-fluid">
     <div class="container">
@@ -40,6 +40,13 @@
                                 </div>
                             </form>
                         </div>
+                        <div class="col m-4">
+                            @if($info === 1)
+                            <p style="font-size: 1.5rem; font-weight: bold;"> Rekapitulasi Bulan {{
+                                now()->locale('id')->translatedFormat('F Y')
+                                }}</p>
+                            @endif
+                        </div>
                     </div>
                     <table class="table table-light" style="table-layout: auto">
                         <thead>
@@ -49,6 +56,7 @@
                                 <td>Nama</td>
                                 <td>Jenis Transaksi</td>
                                 <td>Berat Cucian</td>
+                                <td>Tanggal Transaksi</td>
                                 <td>Total Transaksi</td>
                             </tr>
                         </thead>
@@ -61,6 +69,7 @@
                                 <td>{{ $item->nama }}</td>
                                 <td>{{ $item->category->jenisTransaksi }}</td>
                                 <td>{{ $item->beratCucian }}</td>
+                                <td>{{ $item->created_at->format("H-M-Y") }}</td>
                                 <td>{{ $item->totalTransaksi = $item->beratCucian * $item->category->harga }}</td>
                             </tr>
                             <?php $total = $item->totalTransaksi + $total ?>

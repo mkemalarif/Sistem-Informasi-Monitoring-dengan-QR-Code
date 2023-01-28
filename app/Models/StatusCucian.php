@@ -9,9 +9,10 @@ class StatusCucian extends Model
 {
     use HasFactory;
 
-    protected $guarded = ["noTransaksi", "status_id" => "1"];
+    protected $guarded = ["status_id" => "1"];
     protected $with = ["category", "status"];
     protected $primaryKey = 'noTransaksi';
+    protected $default = ["noTransaksi" => 100010];
 
     public function category()
     {

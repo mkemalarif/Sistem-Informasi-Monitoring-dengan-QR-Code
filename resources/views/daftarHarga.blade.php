@@ -7,7 +7,7 @@
     <p class="text-center">Nikmati layanan laundry yang tak ada duanya. Dapatkan Jasa dengan harga terbaik</p>
 
     <div class="row mt-5">
-        <div class="col-lg-3 col-md-5">
+        <div class="col-lg-3 col-md-5 col-sm-12">
             <div class="card border border-2 border-dark rounded">
                 <div class="card-body">
                     <h5 class="card-title text-center">Reguler</h5>
@@ -19,7 +19,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-5  offset-md-2 offset-lg-0 mt-md-2 mt-lg-0">
+        <div class="col-lg-3 col-md-5 col-sm-12 mt-2 offset-md-2 offset-lg-0 mt-md-2 mt-lg-0">
             <div class="card border border-2 border-dark rounded">
                 <div class="card-body">
                     <h5 class="card-title text-center">Express</h5>
@@ -31,7 +31,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-5">
+        <div class="col-lg-3 col-md-5 col-sm-12 mt-2 mt-lg-0">
             <div class="card border border-2 border-dark">
                 <div class="card-body">
                     <h5 class="card-title text-center">Super Express</h5>
@@ -43,7 +43,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-5 offset-md-2 offset-lg-0 mt-md-2 mt-lg-0">
+        <div class="col-lg-3 col-md-5 col-sm-12 offset-md-2 offset-lg-0 mt-2 mt-lg-0">
             <div class="card border border-2 border-dark">
                 <div class="card-body">
                     <h5 class="card-title text-center">Extra Express</h5>
@@ -58,7 +58,7 @@
     </div>
 
     <div class="row mt-5 d-flex justify-content-lg-center">
-        <div class="col-lg-3 col-md-4">
+        <div class="col-lg-3 col-md-4 col-sm-12 mt-2 mt-md-0">
             <div class="card border border-2 border-dark">
                 <div class="card-body">
                     <h5 class="card-title text-center">Cuci Kering</h5>
@@ -70,7 +70,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 offset-lg-1 col-md-4">
+        <div class="col-lg-3 offset-lg-1 col-md-4 col-sm-12 mt-2 mt-md-0">
             <div class="card border border-2 border-dark">
                 <div class="card-body">
                     <h5 class="card-title text-center">Cuci Lipat</h5>
@@ -82,7 +82,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 offset-lg-1 col-md-4">
+        <div class="col-lg-3 offset-lg-1 col-md-4 col-sm-12 mt-2 mt-md-0">
             <div class="card border border-2 border-dark">
                 <div class="card-body">
                     <h5 class="card-title text-center">Cuci Lipat Express</h5>
@@ -103,7 +103,7 @@
                 <hr style="border:solid rgb(0, 0, 0);">
             </div>
         </div>
-        <div class="col">
+        <div class="col-lg-4 col-md-6 col-12">
             <div class="card mb-4 rounded-3 shadow-sm">
                 <div class="card-header py-3">
                     <h4 class="my-0 fw-normal text-center">Paket 1</h4>
@@ -118,7 +118,7 @@
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col-lg-4 col-md-6 col-12">
             <div class="card mb-4 rounded-3 shadow-sm">
                 <div class="card-header py-3">
                     <h4 class="my-0 fw-normal text-center">Paket 2</h4>
@@ -133,7 +133,7 @@
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col-lg-4 col-12">
             <div class="card mb-4 rounded-3">
                 <div class="card-header py-3">
                     <h4 class="my-0 fw-normal text-center">Paket 3</h4>

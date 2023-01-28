@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col offset-1">
+            <div class="col offset-lg-1">
                 <img class="img-fluid border border-2 border-primary rounded" style="width:38rem"
                     src="{{ asset('photos/lokasi.png') }}" alt="">
             </div>

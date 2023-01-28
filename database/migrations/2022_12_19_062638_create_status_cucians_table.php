@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreignId("status_id");
             $table->integer("beratCucian");
             $table->bigInteger("totalHarga")->nullable();
+            $table->enum("pembayaran", ["Lunas", "Belum Lunas"]);
             $table->timestamps();
         });
     }

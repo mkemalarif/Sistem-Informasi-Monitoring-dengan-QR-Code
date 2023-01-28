@@ -1,6 +1,6 @@
-@extends('layout.main')
+@extends('dashboard.layout.main')
 
-@section('container')
+@section('isiHalaman')
 
 <div class="container-fluid">
     <div class="container mt-5">
@@ -91,6 +91,18 @@
                                 </div>
                                 <div class="col-auto">
                                     <label for="berat">Kg</label>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 row">
+                                <div class="col-md-2">
+                                    <label for="jenisCucian" class="form-label">Pembayaran</label>
+                                </div>
+                                <div class="col">
+                                    <select class="form-select" name="pembayaran" id="pembayaran" required>
+                                        <option value="Belum Lunas">Belum Lunas</option>
+                                        <option value="Lunas">Lunas</option>
+                                    </select>
                                 </div>
                             </div>
 

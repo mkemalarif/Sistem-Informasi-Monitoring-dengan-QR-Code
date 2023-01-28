@@ -1,7 +1,7 @@
-@extends("layout/main")
+@extends("dashboard/layout/main")
 
 
-@section("container")
+@section("isiHalaman")
 
 <div class="container-fluid">
     <div class="container mt-5">
@@ -27,7 +27,7 @@
                         </div>
                     </div>
 
-                    <table class="table mt-1" style="table-layout: auto">
+                    <table class="table mt-1v table-primary" style="table-layout: auto">
                         <thead>
                             <tr>
                                 <th>No.</th>
@@ -38,6 +38,7 @@
                                 <th>Status Cucian</th>
                                 <th>Tanggal</th>
                                 <th>Total Harga</th>
+                                <th>Status Pembayaran</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -52,8 +53,8 @@
                                 <td>{{ $dataCucian->created_at->format('d/m/Y H:m') }}</td>
                                 <td>Rp. {{ $dataCucian->totalHarga = $dataCucian->category->harga *
                                     $dataCucian->beratCucian }}</td>
-
-                                <th>
+                                <td>{{ $dataCucian->pembayaran}}</td>
+                                <td>
                                     <a href="/dashboard/{{ $dataCucian->noTransaksi }}/edit"
                                         class="btn btn-primary">Edit
                                     </a>
@@ -69,7 +70,7 @@
                                     <a href="/print/{{ $dataCucian->noTransaksi }}" class="btn btn-success">
                                         Print
                                     </a>
-                                </th>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

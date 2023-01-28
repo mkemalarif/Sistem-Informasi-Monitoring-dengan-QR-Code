@@ -12,6 +12,7 @@ class RekapitulasiController extends Controller
     public function index(Request $request)
     {
         $data = StatusCucian::latest();
+        $info = 0;
         // request untuk tanggal
         if ($request->tanggal) {
             $data->where("created_at", "like", "%" . $request->tanggal . "%")->get();
@@ -22,18 +23,21 @@ class RekapitulasiController extends Controller
         }
         // request untuk hari ini
         if ($request->submit == "harian") {
-            $data->whereDate("created_at", "like", "%" . now()->toDateString() . "%")->get();
+            $data->whereDate("created_at", "like", "%" . today()->toDateString() . "%")->get();
         }
         // request untuk bulan ini
         if ($request->submit == "bulan") {
             $data->whereDate("created_at", "like", "%" . now()->format('m') . "%")->get();
+            $info = 1;
         }
         return view('dashboard.rekapData', [
 
             "title" => "Rekapitulasi perhari",
             "data" => $data->get(),
             "nomor" => 1,
-            "total" => 0
+            "total" => 0,
+            "info" => $info,
+            "pageInformation" => "Rekapitulasi Data"
         ]);
     }
 }

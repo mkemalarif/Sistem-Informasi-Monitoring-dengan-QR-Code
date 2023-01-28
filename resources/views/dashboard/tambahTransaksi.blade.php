@@ -1,10 +1,10 @@
-@extends('layout.main')
+@extends("dashboard.layout.main")
 
-@section('container')
+@section("isiHalaman")
 
 <div class="container-fluid">
-    <div class="container mt-5">
-        <div class="row">
+    <div class="container">
+        <div class="row mt-5">
             <div class="col-lg-7 offset-2">
                 <div class="card">
                     <h3 class="card-header text-center text-light bg-utama">Form Tambah Data</h3>
@@ -48,16 +48,6 @@
                                     </select>
                                 </div>
                             </div>
-                            {{-- <div class="row my-3">
-                                <div class="col-md-2">
-                                    <label for="tanggalTransaksi" class="form-label">Tanggal Transaksi
-                                    </label>
-                                </div>
-                                <div class="col-md-4">
-                                    <input type="date" name="tanggalTransaksi" class="form-control text-center"
-                                        id="tanggalTransaksi">
-                                </div>
-                            </div> --}}
                             <div class="row my-3">
                                 <div class="col-md-2">
                                     <label for="beratCucian" class="form-label">Berat Cucian
@@ -78,7 +68,17 @@
                                     <label for="berat">Kg</label>
                                 </div>
                             </div>
-
+                            <div class="mb-3 row">
+                                <div class="col-md-2">
+                                    <label for="jenisCucian" class="form-label">Pembayaran</label>
+                                </div>
+                                <div class="col">
+                                    <select class="form-select" name="pembayaran" id="pembayaran" required>
+                                        <option value="Belum Lunas">Belum Lunas</option>
+                                        <option value="Lunas">Lunas</option>
+                                    </select>
+                                </div>
+                            </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
@@ -89,5 +89,4 @@
 </div>
 
 
-
-@endsection
+@stop

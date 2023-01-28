@@ -9,12 +9,15 @@
             <div class="col-sm-2 offset-lg-2 offset-sm-2">
                 <label for="search" class="col-form-label">No transaksi</label>
             </div>
-            <div class="col-sm-5">
-                <input type="number" id="search" name="search" class="form-control border border-2 border-dark"
-                    placeholder="Nomor Transaksi" value="{{ request('search') }}">
+            <div class="col-sm-5 my-sm-3 my-lg-0">
+                <input type="number" id="search" name="search" class="form-control border border-2 border-dark "
+                    placeholder="Nomor Transaksi" value="{{ old('search') }}">
+                @if($errors->has('search'))
+                <span class="text-danger">{{ $errors->first('search') }}</span>
+                @endif
             </div>
-            <div class="col-2">
-                <button class="btn btn-primary d-grid col-6" type="submit">Cari</button>
+            <div class="col-lg-2 my-lg-0 my-3">
+                <button class="btn btn-primary d-grid" type="submit">Cari</button>
             </div>
         </form>
 
@@ -38,10 +41,15 @@
                                 @endif">
                             </div>
                         </div>
-                        <p class="mt-4 mb-1">
-                            status Cucian saat ini {{ now()->format('d/m/Y H:m') }}
-                        </p>
-                        <p>Terakhir di update {{ $item->updated_at->diffForHumans() }}</p>
+                        <div class="row mt-4 mb-1">
+                            <div class="col d-flex justify-content-between">
+                                <p>status Cucian saat ini {{ now()->format('d/m/Y H:m') }}
+                                </p>
+                                <p><strong> status pembayaran : {{ $item->pembayaran }} </strong></p>
+                            </div>
+                        </div>
+                        <p><strong> Terakhir di update {{ $item->status->updated_at->diffForHumans()
+                                }}</strong></p>
                         <hr class="border border-primary border-2 my-1">
                         <div class="scrollspy">
                             @for($i = $item->status_id -1; $i >= 0; $i--) <p style="font-size: 1rem" class="mt-1">

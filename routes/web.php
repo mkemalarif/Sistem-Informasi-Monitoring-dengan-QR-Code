@@ -64,3 +64,10 @@ Route::get('/rekapData', [RekapitulasiController::class, "index"])->middleware("
 
 // Print page
 Route::get("/print/{noTransaksi}", [PrintController::class, "show"])->middleware("auth");
+
+// Route::get("/dash", function () {
+//     return view('dashboard.layout.main', [
+//         "title" => "Halaman Dashboard",
+//         "pageInformation" => "Dashboard"
+//     ]);
+// })->middleware("auth");

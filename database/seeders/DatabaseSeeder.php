@@ -36,28 +36,32 @@ class DatabaseSeeder extends Seeder
             "category_id" => 1,
             "status_id" => 1,
             "beratCucian" => 4,
-            "totalHarga" => "560000"
+            "totalHarga" => "560000",
+            "pembayaran" => "Belum Lunas"
         ]);
         StatusCucian::create([
             "nama" => "andi muhammad kemal",
             "category_id" => 2,
             "status_id" => 3,
             "beratCucian" => 2,
-            "totalHarga" => "354000"
+            "totalHarga" => "354000",
+            "pembayaran" => "Belum Lunas"
         ]);
         StatusCucian::create([
             "nama" => "fico afrizal",
             "category_id" => 3,
             "status_id" => 2,
             "beratCucian" => 5,
-            "totalHarga" => 500000
+            "totalHarga" => 500000,
+            "pembayaran" => "Lunas"
         ]);
         StatusCucian::create([
             "nama" => "embul bijak",
             "category_id" => 5,
             "status_id" => 5,
             "beratCucian" => 10,
-            "totalHarga" => 30000
+            "totalHarga" => 30000,
+            "pembayaran" => "Lunas"
         ]);
     }
 }

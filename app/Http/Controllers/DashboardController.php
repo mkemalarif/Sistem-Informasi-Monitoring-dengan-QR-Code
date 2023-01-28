@@ -25,7 +25,8 @@ class DashboardController extends Controller
         return view('dashboard.index', [
             "title" => "Dashboard",
             "data" => $data->paginate(10),
-            "nomor" => 1
+            "nomor" => 1,
+            "pageInformation" => "dashboard"
         ]);
     }
 
@@ -38,7 +39,8 @@ class DashboardController extends Controller
     {
         return view('dashboard.tambahTransaksi', [
             "title" => "Tambah Transaksi",
-            "data" => Category::all()
+            "data" => Category::all(),
+            "pageInformation" => "Tambah Transaksi"
         ]);
     }
 
@@ -50,10 +52,12 @@ class DashboardController extends Controller
      */
     public function store(Request $request, Category $category)
     {
+
         $validated = $request->validate([
             "nama" => "required|max:255",
             "category_id" => "required",
-            "beratCucian" => "required"
+            "beratCucian" => "required",
+            "pembayaran" => "required"
         ]);
 
         $validated['status_id'] = 1;
@@ -87,7 +91,8 @@ class DashboardController extends Controller
             "title" => "edit transaksi",
             "data" => Category::all(),
             "info" => $dashboard,
-            "status" => Status::all()
+            "status" => Status::all(),
+            "pageInformation" => "Edit Transaksi"
         ]);
     }
 
@@ -104,8 +109,12 @@ class DashboardController extends Controller
             "nama" => "required|max:255",
             "category_id" => "required",
             "status_id" => "required",
-            "beratCucian" => "required"
+            "beratCucian" => "required",
+            "pembayaran" => "required"
         ]);
+        if ($validated["status_id"] == 5) {
+            $validated["pembayaran"] = "lunas";
+        }
 
         StatusCucian::where("noTransaksi", $dashboard->noTransaksi)->update($validated);
         return redirect('/dashboard')->with("success", "Transaksi Berhasil Update");
