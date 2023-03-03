@@ -29,6 +29,22 @@
                         @if($data === 0)
                         @else
                         @foreach($data as $item)
+                        <div class="row">
+                            <div class="col">
+                                <p><strong>nama: {{ $item->nama }}</strong></p>
+                            </div>
+                            <div class="col offset-4">
+                                <p><strong>berat: {{ $item->beratCucian }} Kg</strong></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p><strong>Nomor Transaksi: {{ $item->noTransaksi }}</strong></p>
+                            </div>
+                            <div class="col offset-4">
+                                <p><strong>Total Harga: Rp. {{ $item->totalHarga }}</strong></p>
+                            </div>
+                        </div>
                         <div class="progress">
                             <div class="progress-bar progress-bar-striped position-relative" role="progressbar"
                                 aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"

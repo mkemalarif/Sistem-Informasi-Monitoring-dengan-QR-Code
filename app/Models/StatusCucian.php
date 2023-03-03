@@ -13,6 +13,10 @@ class StatusCucian extends Model
     protected $with = ["category", "status"];
     protected $primaryKey = 'noTransaksi';
 
+    // public function scopeSearch($query){
+    //     $query->
+    // }
+
     public function category()
     {
         return $this->belongsTo(Category::class);

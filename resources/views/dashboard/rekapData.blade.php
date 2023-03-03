@@ -31,19 +31,20 @@
                                         <span class="visually-hidden">Toggle Dropdown</span>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><button type="submit" class="dropdown-item" id="submit" name="harian"
-                                                value="harian" onclick="ubahNilai('harian')">Harian</button>
-                                        </li>
                                         <li><button class="dropdown-item" name="bulan" id="submit" type="submit"
-                                                value="bulan" onclick="ubahNilai('sebulan')">Sebulan</button>
+                                                value="bulan">Sebulan</button>
+                                        </li>
+                                        <li><button type="submit" class="dropdown-item" id="submit" name="harian"
+                                                value="harian">Harian</button>
                                         </li>
                                         <li><button class="dropdown-item" name="semua" id="submit" type="submit"
-                                                value="semua" onclick="ubahNilai('semua')">semua</button>
+                                                value="semua">semua</button>
                                         </li>
                                     </ul>
                                 </div>
                             </form>
                         </div>
+
                         <div class=" col m-4">
                             @if($info === 1)
                             <p style="font-size: 1.5rem; font-weight: bold;"> Rekapitulasi Bulan {{

@@ -27,7 +27,7 @@ class RekapitulasiController extends Controller
         }
 
         // request untuk bulan ini
-        if ($request->all) {
+        if ($request->bulan) {
             // $data->whereDate("created_at", "like", "%" . now()->format('m') . "%")->get();
             $data->whereYear("created_at", now()->format('Y'))
                 ->whereMonth("created_at", now()->format('m'))
@@ -38,6 +38,7 @@ class RekapitulasiController extends Controller
 
             "title" => "Rekapitulasi perhari",
             "data" => $data->get(),
+            "kategori" => Category::latest(),
             "nomor" => 1,
             "total" => 0,
             "info" => $info,
