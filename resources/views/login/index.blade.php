@@ -34,6 +34,7 @@
                                     <input type="password" name="password" id="password"
                                         class="@error('password') is-invalid @enderror form-control " required>
                                     <label for="password">Password</label>
+                                    <i class="fa fa-eye" id="togglePassword"></i>
                                 </div>
                                 <button class="btn btn-lg btn-primary my-3 w-100" type="submit">Login</button>
                             </form>
@@ -45,5 +46,24 @@
         </div>
     </div>
 </div>
+
+<script>
+    const icon = document.getElementById('togglePassword');
+let password = document.getElementById('password');
+
+/* Event fired when <i> is clicked */
+icon.addEventListener('click', function() {
+  if(password.type === "password") {
+    password.type = "text";
+    icon.classList.add("fa-eye-slash");
+    icon.classList.remove("fa-eye");
+  }
+  else {
+    password.type = "password";
+    icon.classList.add("fa-eye");
+    icon.classList.remove("fa-eye-slash");
+  }
+});
+</script>
 
 @endsection

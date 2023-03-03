@@ -2,7 +2,7 @@
 
 
 @section("isiHalaman")
-
+<h3>Halo {{ auth()->user()->nama }}</h3>
 <div class="container-fluid">
     <div class="container mt-5">
         <div class="row">
@@ -14,7 +14,6 @@
             @endif
             <div class="col-md-9 col-lg-12 col-sm-12">
                 <div class="card border border-2 border-dark">
-
                     <div class="row m-2">
                         <div class="col-lg-6">
                             <form action="/dashboard">
@@ -27,7 +26,7 @@
                         </div>
                     </div>
 
-                    <table class="table mt-1v table-primary" style="table-layout: auto">
+                    <table class="table mt-1" style="table-layout: auto">
                         <thead>
                             <tr>
                                 <th>No.</th>

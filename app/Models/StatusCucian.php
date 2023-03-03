@@ -12,7 +12,6 @@ class StatusCucian extends Model
     protected $guarded = ["status_id" => "1"];
     protected $with = ["category", "status"];
     protected $primaryKey = 'noTransaksi';
-    protected $default = ["noTransaksi" => 100010];
 
     public function category()
     {
@@ -22,5 +21,10 @@ class StatusCucian extends Model
     public function status()
     {
         return $this->belongsTo(Status::class);
+    }
+
+    public function User()
+    {
+        return $this->belongsTo(User::class);
     }
 }

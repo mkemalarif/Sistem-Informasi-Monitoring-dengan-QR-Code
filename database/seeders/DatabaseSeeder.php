@@ -22,8 +22,10 @@ class DatabaseSeeder extends Seeder
 
         // user seed, tidak diganggu gugat
         User::create([
-            "username" => "admin",
-            "password" => bcrypt("admin")
+            "username" => "owner",
+            "nama" => "anita salim",
+            "password" => bcrypt("ownerfarizlaundry"),
+            "role" => "owner"
         ]);
 
         $this->call([
@@ -33,6 +35,7 @@ class DatabaseSeeder extends Seeder
 
         StatusCucian::create([
             "nama" => "rizal asry",
+            "user_id" => 1,
             "category_id" => 1,
             "status_id" => 1,
             "beratCucian" => 4,
@@ -41,6 +44,7 @@ class DatabaseSeeder extends Seeder
         ]);
         StatusCucian::create([
             "nama" => "andi muhammad kemal",
+            "user_id" => 1,
             "category_id" => 2,
             "status_id" => 3,
             "beratCucian" => 2,
@@ -49,6 +53,7 @@ class DatabaseSeeder extends Seeder
         ]);
         StatusCucian::create([
             "nama" => "fico afrizal",
+            "user_id" => 1,
             "category_id" => 3,
             "status_id" => 2,
             "beratCucian" => 5,
@@ -57,6 +62,7 @@ class DatabaseSeeder extends Seeder
         ]);
         StatusCucian::create([
             "nama" => "embul bijak",
+            "user_id" => 1,
             "category_id" => 5,
             "status_id" => 5,
             "beratCucian" => 10,

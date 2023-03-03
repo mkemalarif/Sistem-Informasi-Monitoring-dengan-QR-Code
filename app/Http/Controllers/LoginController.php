@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -17,17 +18,20 @@ class LoginController extends Controller
 
     public function authenticate(Request $request)
     {
+        User::all();
         $credentials = $request->validate([
             'username' => ['required'],
             'password' => ['required'],
         ]);
         // dd($email, $password);
 
+
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
             return redirect()->intended('/dashboard');
         }
+
 
 
 

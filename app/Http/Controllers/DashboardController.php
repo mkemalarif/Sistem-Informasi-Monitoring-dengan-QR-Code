@@ -62,6 +62,7 @@ class DashboardController extends Controller
 
         $validated['status_id'] = 1;
         $validated["totalHarga"] = (int)["beratCucian"] * (int)[$category->harga];
+        $validated["user_id"] = auth()->user()->id;
 
         StatusCucian::create($validated);
 

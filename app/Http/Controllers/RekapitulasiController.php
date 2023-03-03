@@ -18,16 +18,20 @@ class RekapitulasiController extends Controller
             $data->where("created_at", "like", "%" . $request->tanggal . "%")->get();
         }
         // request default untuk menampilkan semua data
-        if ($request->submit == "all") {
-            $data->paginate(10)->get();
+        if ($request->semua) {
+            $data->get();
         }
         // request untuk hari ini
-        if ($request->submit == "harian") {
+        if ($request->harian) {
             $data->whereDate("created_at", "like", "%" . today()->toDateString() . "%")->get();
         }
+
         // request untuk bulan ini
-        if ($request->submit == "bulan") {
-            $data->whereDate("created_at", "like", "%" . now()->format('m') . "%")->get();
+        if ($request->all) {
+            // $data->whereDate("created_at", "like", "%" . now()->format('m') . "%")->get();
+            $data->whereYear("created_at", now()->format('Y'))
+                ->whereMonth("created_at", now()->format('m'))
+                ->get();
             $info = 1;
         }
         return view('dashboard.rekapData', [

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
@@ -51,23 +52,21 @@ Route::get('/faq', function () {
 
 // all admin auth
 
-// login page
+
+
+// login page admin
 Route::get('/login', [LoginController::class, "index"])->middleware("guest");
 Route::post('/login', [LoginController::class, "authenticate"])->name('login');
 Route::get('/logout', [LoginController::class, "logout"]);
 
+// Dashboard admin
+Route::resource('/dashboard/admin', DashboardAdminController::class)->except("show")->middleware("admin");
+
 // crud dashboard dengan controller resource
-Route::resource('/dashboard', DashboardController::class)->middleware("auth");
+Route::resource('/dashboard', DashboardController::class)->except('show')->middleware("auth");
 
 // cek rekap data dan hasil transaksi perhari
 Route::get('/rekapData', [RekapitulasiController::class, "index"])->middleware("auth");
 
 // Print page
 Route::get("/print/{noTransaksi}", [PrintController::class, "show"])->middleware("auth");
-
-// Route::get("/dash", function () {
-//     return view('dashboard.layout.main', [
-//         "title" => "Halaman Dashboard",
-//         "pageInformation" => "Dashboard"
-//     ]);
-// })->middleware("auth");

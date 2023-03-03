@@ -24,23 +24,27 @@
                             <form action="/rekapData" method="get">
                                 @csrf
                                 <div class="btn-group m-3" style="width:8rem">
-                                    <button type="submit" class="btn btn-primary" name="hari" value="all">All</button>
+                                    <button type="submit" class="btn btn-primary" name="submit" value="semua"
+                                        id="opt">all</button>
                                     <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
                                         data-bs-toggle="dropdown" aria-expanded="false">
                                         <span class="visually-hidden">Toggle Dropdown</span>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><button type="submit" class="dropdown-item" id="submit" name="submit"
-                                                value="harian">Harian</button>
+                                        <li><button type="submit" class="dropdown-item" id="submit" name="harian"
+                                                value="harian" onclick="ubahNilai('harian')">Harian</button>
                                         </li>
-                                        <li><button class="dropdown-item" name="submit" id="submit" type="submit"
-                                                value="bulan">Sebulan</button>
+                                        <li><button class="dropdown-item" name="bulan" id="submit" type="submit"
+                                                value="bulan" onclick="ubahNilai('sebulan')">Sebulan</button>
+                                        </li>
+                                        <li><button class="dropdown-item" name="semua" id="submit" type="submit"
+                                                value="semua" onclick="ubahNilai('semua')">semua</button>
                                         </li>
                                     </ul>
                                 </div>
                             </form>
                         </div>
-                        <div class="col m-4">
+                        <div class=" col m-4">
                             @if($info === 1)
                             <p style="font-size: 1.5rem; font-weight: bold;"> Rekapitulasi Bulan {{
                                 now()->locale('id')->translatedFormat('F Y')
@@ -53,6 +57,7 @@
                             <tr>
                                 <td>Nomor</td>
                                 <td>Nomor Transaksi</td>
+                                <td>Dilayani oleh</td>
                                 <td>Nama</td>
                                 <td>Jenis Transaksi</td>
                                 <td>Berat Cucian</td>
@@ -66,10 +71,11 @@
                             <tr>
                                 <th>{{ $nomor++ }}</th>
                                 <td>{{ $item->noTransaksi }}</td>
+                                <td>{{ $item->user->nama }}</td>
                                 <td>{{ $item->nama }}</td>
                                 <td>{{ $item->category->jenisTransaksi }}</td>
                                 <td>{{ $item->beratCucian }}</td>
-                                <td>{{ $item->created_at->format("H-M-Y") }}</td>
+                                <td>{{ $item->created_at->format("d-M-Y") }}</td>
                                 <td>{{ $item->totalTransaksi = $item->beratCucian * $item->category->harga }}</td>
                             </tr>
                             <?php $total = $item->totalTransaksi + $total ?>
@@ -84,5 +90,10 @@
         </div>
     </div>
 </div>
+
+
+<script>
+
+</script>
 
 @endsection

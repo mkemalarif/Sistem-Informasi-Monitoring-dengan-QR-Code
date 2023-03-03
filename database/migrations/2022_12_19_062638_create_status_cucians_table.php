@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('status_cucians', function (Blueprint $table) {
             $table->bigIncrements("noTransaksi");
             $table->string("nama");
+            $table->foreignId("user_id");
             $table->foreignId("category_id");
             $table->foreignId("status_id");
             $table->integer("beratCucian");
