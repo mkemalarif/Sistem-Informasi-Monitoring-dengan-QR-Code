@@ -19,28 +19,36 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="col-3 m-2">
+                        <div class="col-2 m-4">
+                            {{-- form dropdown button untuk pencarian hari dan bulanan --}}
+                            <form action="/rekapData" method="GET">
+                                @csrf
+                                <div class="input-group">
+                                    <select class="form-select" name="tanggalCollection" id="">
+                                        <option value="semua" {{ old('tanggalCollection')=="semua" ? 'selected' : '' }}>
+                                            semua</option>
+                                        <option value="harian" {{ old('tanggalCollection')=="harian" ? 'selected' : ''
+                                            }}>harian</option>
+                                        <option value="bulan" {{ old('tanggalCollection')=="bulan" ? 'selected' : '' }}>
+                                            bulan</option>
+                                    </select>
+
+                                    <button class="btn btn-primary">cari</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-3 my-4">
                             {{-- form dropdown button untuk pencarian hari dan bulanan --}}
                             <form action="/rekapData" method="get">
                                 @csrf
-                                <div class="btn-group m-3" style="width:8rem">
-                                    <button type="submit" class="btn btn-primary" name="submit" value="semua"
-                                        id="opt">all</button>
-                                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        <span class="visually-hidden">Toggle Dropdown</span>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><button class="dropdown-item" name="bulan" id="submit" type="submit"
-                                                value="bulan">Sebulan</button>
-                                        </li>
-                                        <li><button type="submit" class="dropdown-item" id="submit" name="harian"
-                                                value="harian">Harian</button>
-                                        </li>
-                                        <li><button class="dropdown-item" name="semua" id="submit" type="submit"
-                                                value="semua">semua</button>
-                                        </li>
-                                    </ul>
+                                <div class="input-group">
+                                    <select class="form-select" name="category" id="">
+                                        @foreach($kategori as $category)
+                                        <option value={{ $category->id }}>{{ $category->jenisTransaksi }}
+                                        </option>
+                                        @endforeach
+                                    </select>
+                                    <button class="btn btn-primary">cari</button>
                                 </div>
                             </form>
                         </div>
