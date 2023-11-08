@@ -24,7 +24,7 @@ class DashboardController extends Controller
 
         return view('dashboard.index', [
             "title" => "Dashboard",
-            "data" => $data->paginate(10),
+            "data" => $data->paginate(2),
             "nomor" => 1,
             "pageInformation" => "dashboard"
         ]);
